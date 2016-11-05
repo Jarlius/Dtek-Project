@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt,twoside]{article}
+
+\usepackage[inner=3cm,top=3cm,outer=3cm,bottom=3cm]{geometry}
+%\usepackage[swedish]{babel}
+%\usepackage[T1]{fontenc}					% compilera accuentuationer, behövs den? 
+\usepackage[utf8]{inputenc}					% skapa rätt tecken för åäö
+
+\usepackage{graphicx}						% bifoga bilder
+\usepackage[table]{xcolor}					% färg, antar jag
+\definecolor{light-gray}{gray}{0.95}		% fin grå färg
+%\usepackage{hyperref}						% hyperlink - länkar? typ url
+
+\usepackage{listings}						% för kodtext?
+
+%\usepackage{natbib}						% dessa för källhänvisningar
+%\bibliographystyle{unsrtnat} 
+%\bibliographystyle{agsm}
+
+\usepackage{fancyhdr}						% möjliggör fancy
+
+\pagestyle{fancy}							% Dessa tre verkar sätta sidnumret åt sidan på sidfot
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}			% dessa två tar bort fula linjer
+%\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\arraystretch}{2}				% mer plats i tabeller
+
+\setlength\parindent{0pt}					% tar bort indent vid ny paragraf
+\setlength\parskip{2pt}						% 
+%\headheight 40pt							% bestämmer storleken på sidhuvudet
+
+\usepackage{titling}						% för att få bild innan titeln
+
+\pretitle{
+	\begin{center}
+	\LARGE
+	\includegraphics[scale=0.15]{kthlogo}\\
+	\vskip1cm
+}
+\posttitle{\end{center}}
+
+\def\thedate{\today}
+\title{Draft}
+\author{Jarl Silvén (921027-2739) och Simon Hellberg (?)}
+\date{\thedate}
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\subsection*{Objective and Requirements.}
+
+\subsection*{Solution.}
+
+\subsection*{Verification.}
+
+\subsection*{Contributions.}
+
+\subsection*{Reflections.}
+
+\end{document}
