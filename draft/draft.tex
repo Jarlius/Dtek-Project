@@ -53,31 +53,31 @@
 
 \subsection*{Objective and Requirements.}
 
-The purpose of this project is to develop a simple audio record and playback system. A button will be pressed and a mic will start recording whatever sound there is, then the sound will play back to the user. 
+The purpose of this project is to develop a simple audio record and playback system. A button will be pressed and a microphone will start recording whatever sound there is, then the sound will play back to the user. 
 The main \emph{must} requirements for the project:
 \begin{itemize}
 \item The ability to control the recording with buttons on the ChipKIT board.
 \item Audio playback of the recording.
-\item Control of when playback start using the ChipKIT board.
-\item The system must work with a mic and speakers.
+\item Control of when playback start, using the ChipKIT board.
+\item The system must work with a microphone and speakers.
 \end{itemize}
 Optional features that \emph{may} be included if time allows:
 \begin{itemize}
-\item Voice changer features controlled through the ChipKIT board.
+\item Voice changer features, controlled through the ChipKIT board.
 \item Custom recording length.
-\item Display of useful stuff like voice changer mode, current recording time and last recording lenght.
+\item Display of useful information like voice changer mode, current recording time and last recording length.
 \end{itemize}
 
 \subsection*{Solution.}
 
-We intend to develop our project on the ChipKIT Uno32 board, the Basic I/O shield, an external mircophone and some speakers. We will use the buttons on the Basic I/O shield to control the recording and playback using interrupts. We will plug the microphone and the speakers in to the chipkit through some of its ports. We will develop everything in C and perhaps with some assembler code.
+We intend to develop our project on the ChipKIT Uno32 board, the Basic I/O shield, an external microphone and some speakers. We will use the buttons on the Basic I/O shield to control the recording and playback using interrupts. We will plug the microphone and the speakers in to the chipkit through some of its ports. We will develop everything in C and perhaps with some assembler code.
 
 \subsection*{Verification.}
 
 Three parts needs to be tested; Microphone, Memory and Speakers.
 The Microphone can be considered operational when it changes data in designated memory.
 Memory itself is a bit trickier, and will presumably be stored as an array with a currently unknown datatype.
-The Speaker is the easiest to verify, as it will play audio when it's working.
+The Speaker is the easiest to verify, as it will play audio when it is working.
 
 \subsection*{Contributions.}
 
