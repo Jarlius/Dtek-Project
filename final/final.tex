@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt,twoside]{article}
+
+\usepackage[inner=2cm,top=3cm,outer=2cm,bottom=3cm]{geometry}
+%\usepackage[swedish]{babel}
+%\usepackage[T1]{fontenc}					% compilera accuentuationer, behövs den? 
+\usepackage[utf8]{inputenc}					% skapa rätt tecken för åäö
+
+\usepackage{graphicx}						% bifoga bilder
+\usepackage[table]{xcolor}					% färg, antar jag
+\definecolor{light-gray}{gray}{0.95}		% fin grå färg
+%\usepackage{hyperref}						% hyperlink - länkar? typ url
+
+\usepackage{listings}						% för kodtext?
+
+%\usepackage{natbib}						% dessa för källhänvisningar
+%\bibliographystyle{unsrtnat} 
+%\bibliographystyle{agsm}
+
+\usepackage{fancyhdr}						% möjliggör fancy
+
+\pagestyle{fancy}							% Dessa tre verkar sätta sidnumret åt sidan på sidfot
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}			% dessa två tar bort fula linjer
+%\renewcommand{\footrulewidth}{0pt}
+
+\renewcommand{\arraystretch}{2}				% mer plats i tabeller
+
+\setlength\parindent{0pt}					% tar bort indent vid ny paragraf
+\setlength\parskip{2pt}						% 
+%\headheight 40pt							% bestämmer storleken på sidhuvudet
+
+\usepackage{titling}						% för att få bild innan titeln
+
+\pretitle{
+	\begin{center}
+	\LARGE
+	\includegraphics[scale=0.15]{kthlogo}\\
+	\vskip1cm
+}
+\posttitle{\end{center}}
+
+\def\thedate{\today}
+\title{X-terminate - A Simple Side-Scrolling Game.}
+\author{Jarl Silvén (921027-2739) och Simon Hellberg (940903 8636)}
+\date{\thedate}
+\begin{document}
+
+\maketitle
+
+\newpage
+
+\subsection*{Objective and Requirements.}
+
+The purpose of this project was initially to record and playback sound through the ChipKit board, however, a busy autumn made us postpone acquiring the necessary equipment. When time ran out, we switched to a simple 2D game, using text symbols from the labs as graphics. Many features were achieved in the end:
+\begin{itemize}
+\item A moving "sidescroller" screen where rows of characters move to the left based on a timer.
+\item A player character, controlled with two buttons for moving upwards and downwards.
+\item Random generation of non-player characters, spreading out obstacles, powerups and treasure.
+\item A score counter, displayed at the end and based on distance traveled and treasure picked up.
+\item Hit detection, allowing player to pick up powerups and ending the game if an obstacle is touched.
+\item God mode, initiated when picking up powerups and allowing the player to pass through obstacles for a duration of 10 steps.
+\item Fade out mode, warning the player that god mode is fading by flicking between god character and player character.
+\item Increase in speed as time goes by, to make the game more challenging.
+\end{itemize}
+What we did not achieve due to lack of time but would've liked to was:
+\begin{itemize}
+\item A highscore page, stored between games and saved when the ChipKit board shuts down.
+\item Replacing the rows of text symbols with pixels, creating a better sense of movement.
+\end{itemize}
+
+\subsection*{Solution.}
+
+We developed our game using the ChipKIT Uno32 board and the Basic I/O shield. Most of the code was written in C. We used the buttons to control the movement in the game and the timer to control the pacing. To generate our "random" numbers we used a predefined library, seeded by a combination of user input and the timer.
+
+\subsection*{Verification.}
+
+We had to test all the parts of the game and how they interecated with eachother. The buttons, the random generation, the power-ups, the hit detection, the game moving faster and the start screen.\par
+Luckily due to the simplicity of the game most of these were simple to test and verify by playing the game, trying to verify correctness in the general case then try to achieve specific niche situations in the game. To test the niche situations we sometimes changed modifiers within the game. For instance to test the power ups we increased the likelyhood of powerups appearing to test if they interfered with eachother or themselves and to test the winnning end screen we made the game easy to complete.
+
+\newpage
+
+\subsection*{Contributions.}
+
+Simon focused on the hit detection and generating a random algorithm that made the difficulty of the game be in line with our vision.\par
+Jarl focused on making the buttons work in the way we intended (making sure every buttonpress only moved the player once etcetera) and designing and implementing the power-ups. The rest we wrote togheter.
+
+\subsection*{Reflections.}
+
+In the end, we both regret not starting on the project sooner, as we underestimated how difficult input and output would be through the Basic I/O Shield. Learning more about input and output would have been very rewarding, but practicing C code had great value as well.\par
+More than anything else, the project gives one an appreciation for high-level programming languages. Though C is more efficient and closer to hardware, other languages supply better structure and libraries allowing one to focus on designing cool features rather than reinventing the wheel and making rudimentary connections to input and output.\par
+Next time we come across a project such as this, we'll make sure to learn the IO better and keep that in C, but switch to a high-level language as soon as it gets too complex.
+
+\end{document}
