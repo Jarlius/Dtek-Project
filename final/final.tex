@@ -52,22 +52,21 @@
 \newpage
 
 \subsection*{Objective and Requirements.}
-
-The purpose of this project was initially to record and playback sound through the ChipKit board, however, a busy autumn made us postpone acquiring the necessary equipment. When time ran out, we switched to a simple 2D game, using text symbols from the labs as graphics. Many features were achieved in the end:
+The purpose of this project was initially to record and playback sound through the ChipKit board, however, a busy autumn made us postpone acquiring the necessary equipment. When time ran out, and realizing that the sound quality did not turn out as expected, we switched to a simple 2D game, using text symbols from the labs as graphics. Many features were achieved in the end:
 \begin{itemize}
-\item A moving "sidescroller" screen where rows of characters move to the left based on a timer.
+\item A moving "side-scroller" screen where rows of characters move to the left based on a timer.
 \item A player character, controlled with two buttons for moving upwards and downwards.
-\item Random generation of non-player characters, spreading out obstacles, powerups and treasure.
+\item Random generation of non-player characters, spreading out obstacles, power-ups and treasure.
 \item A score counter, displayed at the end and based on distance traveled and treasure picked up.
-\item Hit detection, allowing player to pick up powerups and ending the game if an obstacle is touched.
-\item God mode, initiated when picking up powerups and allowing the player to pass through obstacles for a duration of 10 steps.
+\item Hit detection, allowing player to pick up power-ups and ending the game if an obstacle.
+\item God mode, initiated when picking up power-ups and allowing the player to pass through obstacles 10 steps.
 \item Fade out mode, warning the player that god mode is fading by flicking between god character and player character.
 \item Increase in speed as time goes by, to make the game more challenging.
 \end{itemize}
 What we did not achieve due to lack of time but would've liked to was:
 \begin{itemize}
-\item A highscore page, stored between games and saved when the ChipKit board shuts down.
-\item Replacing the rows of text symbols with pixels, creating a better sense of movement.
+\item A high score page, stored between games and saved when the ChipKit board shuts down.
+\item Replacing the rows of text symbols with pixels, and creating more interesting character entities.
 \end{itemize}
 
 \subsection*{Solution.}
@@ -76,15 +75,15 @@ We developed our game using the ChipKIT Uno32 board and the Basic I/O shield. Mo
 
 \subsection*{Verification.}
 
-We had to test all the parts of the game and how they interecated with eachother. The buttons, the random generation, the power-ups, the hit detection, the game moving faster and the start screen.\par
-Luckily due to the simplicity of the game most of these were simple to test and verify by playing the game, trying to verify correctness in the general case then try to achieve specific niche situations in the game. To test the niche situations we sometimes changed modifiers within the game. For instance to test the power ups we increased the likelyhood of powerups appearing to test if they interfered with eachother or themselves and to test the winnning end screen we made the game easy to complete.
+We had to test all the parts of the game and how they interacted with each other. The buttons, the random generation, the power-ups, the hit detection, the game moving faster and the start screen.\par
+Luckily due to the simplicity of the game most of these were simple to test and verify by playing the game, trying to verify correctness in the general case then try to achieve specific niche situations in the game. To test the niche situations we sometimes changed modifiers within the game. For instance to test the power ups we increased the likelihood of power-ups appearing (to test if they interfered with each other or themselves) and to test the winning end screen we made the game easy to complete.
 
 \newpage
 
 \subsection*{Contributions.}
 
 Simon focused on the hit detection and generating a random algorithm that made the difficulty of the game be in line with our vision.\par
-Jarl focused on making the buttons work in the way we intended (making sure every buttonpress only moved the player once etcetera) and designing and implementing the power-ups. The rest we wrote togheter.
+Jarl focused on making the buttons work in the way we intended (making sure every button press only moved the player once etcetera) and designing and implementing the power-ups. We wrote the rest of the code together.
 
 \subsection*{Reflections.}
 
